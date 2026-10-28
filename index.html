@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Deportivo - Utilería</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <header class="encabezado">
+    <h1>Club Deportivo</h1>
+    <p>Control de utilería y materiales</p>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="tarjeta">
+      <h2>Registrar artículo</h2>
+
+      <form id="formularioArticulo">
+        <div class="campo">
+          <label for="inputNombre">Nombre del artículo</label>
+          <input type="text" id="inputNombre" placeholder="Ej: Pelota de vóley" required>
+        </div>
+
+        <div class="campo">
+          <label for="inputDeporte">Deporte</label>
+          <select id="inputDeporte" required>
+            <option value="">Seleccionar...</option>
+            <option value="Fútbol">Fútbol</option>
+            <option value="Básquet">Básquet</option>
+            <option value="Vóley">Vóley</option>
+            <option value="Natación">Natación</option>
+            <option value="Tenis">Tenis</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="inputCantidad">Cantidad</label>
+          <input type="number" id="inputCantidad" min="1" placeholder="Ej: 10" required>
+        </div>
+
+        <div class="campo">
+          <label for="inputEstado">Estado</label>
+          <select id="inputEstado" required>
+            <option value="">Seleccionar...</option>
+            <option value="Nuevo">Nuevo</option>
+            <option value="Bueno">Bueno</option>
+            <option value="Regular">Regular</option>
+            <option value="Para reparar">Para reparar</option>
+          </select>
+        </div>
+
+        <button type="submit" class="boton">Guardar artículo</button>
+      </form>
+
+      <p id="mensaje" class="mensaje"></p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Artículos registrados</h2>
+
+      <div class="busqueda">
+        <input type="text" id="inputBusqueda" placeholder="Buscar por nombre del artículo...">
+        <button type="button" id="botonLimpiar" class="boton boton-secundario">Limpiar</button>
+      </div>
+
+      <p id="contador" class="contador"></p>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Deporte</th>
+              <th>Cantidad</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tablaArticulos"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
